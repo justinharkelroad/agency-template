@@ -1,3 +1,6 @@
+/* ================================================
+   BASE VARIABLES — overridden per template below
+   ================================================ */
 :root {
   --color-primary: #1A3A5C;
   --color-secondary: #2E75B6;
@@ -12,10 +15,51 @@
   --color-primary-light: #E8F0F8;
   --color-accent-hover: #B8862F;
 
-  /* Typography */
+  /* Spacing */
+  --section-padding: clamp(3rem, 8vw, 6rem);
+}
+
+/* ================================================
+   HERITAGE — DM Serif Display + DM Sans
+   Classic, professional, rounded
+   ================================================ */
+[data-template="heritage"] {
   --font-heading: 'DM Serif Display', Georgia, serif;
   --font-body: 'DM Sans', system-ui, sans-serif;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-btn: 0.5rem;
+  --radius-card: 0.75rem;
+  --hero-overlay: linear-gradient(135deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.2) 100%);
+}
 
-  /* Spacing rhythm */
-  --section-padding: clamp(3rem, 8vw, 6rem);
+/* ================================================
+   MOMENTUM — Space Grotesk + Inter
+   Bold, energetic, pill-shaped
+   ================================================ */
+[data-template="momentum"] {
+  --font-heading: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --radius-sm: 0.75rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-btn: 9999px;
+  --radius-card: 1rem;
+  --hero-overlay: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.05) 100%);
+}
+
+/* ================================================
+   PRESTIGE — Playfair Display + Source Sans 3
+   Warm, editorial, refined
+   ================================================ */
+[data-template="prestige"] {
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Source Sans 3', system-ui, sans-serif;
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-btn: 0.375rem;
+  --radius-card: 0.5rem;
+  --hero-overlay: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.6) 100%);
 }

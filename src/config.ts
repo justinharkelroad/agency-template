@@ -1,3 +1,5 @@
+export type TemplateName = 'heritage' | 'momentum' | 'prestige';
+
 export interface TeamMember {
   name: string;
   title: string;
@@ -20,6 +22,9 @@ export interface SocialLinks {
 }
 
 export interface AgencyConfig {
+  // === TEMPLATE ===
+  template: TemplateName;
+
   // === AGENCY IDENTITY ===
   agencyName: string;
   tagline: string;
@@ -39,6 +44,7 @@ export interface AgencyConfig {
   // === BRAND ===
   logo: string;
   heroImage: string;
+  galleryImages?: string[]; // Momentum template uses 4-6 images for collage
   colors: {
     primary: string;
     secondary: string;
@@ -60,15 +66,18 @@ export interface AgencyConfig {
   social: SocialLinks;
   googleMapsEmbedUrl: string;
 
-  // === SEO ===
+  // === SEO / GEO ===
   siteUrl: string;
   metaDescription: string;
+  serviceAreas: string[]; // nearby cities for geo-targeted SEO
 
   // === FORMS ===
   formspreeId: string;
 }
 
 const config: AgencyConfig = {
+  template: 'heritage',
+
   agencyName: "Maxwell Insurance Agency",
   tagline: "Protecting What Matters Most",
   phone: "5551234567",
@@ -86,6 +95,14 @@ const config: AgencyConfig = {
 
   logo: "/images/logo.png",
   heroImage: "/images/hero.jpg",
+  galleryImages: [
+    "/images/gallery/family-1.jpg",
+    "/images/gallery/family-2.jpg",
+    "/images/gallery/community.jpg",
+    "/images/gallery/office.jpg",
+    "/images/gallery/handshake.jpg",
+    "/images/gallery/family-3.jpg",
+  ],
   colors: {
     primary: "#1A3A5C",
     secondary: "#2E75B6",
@@ -98,7 +115,7 @@ const config: AgencyConfig = {
   aboutText: "Maxwell Insurance Agency has been serving the Springfield community for over 15 years. Founded by John Maxwell, our mission is simple: provide honest, personalized insurance solutions that protect what matters most to our neighbors and friends.\n\nWe believe insurance should be straightforward. No jargon, no runaround — just clear answers and coverage that fits your life. Whether you're buying your first car, closing on a home, or growing a business, we're here to make sure you're covered.",
   aboutHighlights: [
     "Locally owned and operated since 2010",
-    "Top 10% Allstate agency nationwide",
+    "Top 10% agency nationwide",
     "Over 2,000 families protected",
     "A+ Better Business Bureau rating"
   ],
@@ -136,7 +153,8 @@ const config: AgencyConfig = {
   googleMapsEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!...",
 
   siteUrl: "https://www.maxwellinsurance.com",
-  metaDescription: "Maxwell Insurance Agency in Springfield, TX — trusted local Allstate agency offering auto, home, life, and business insurance. Get a free quote today.",
+  metaDescription: "Maxwell Insurance Agency in Springfield, TX — trusted local agency offering auto, home, life, and business insurance. Get a free quote today.",
+  serviceAreas: ["Dallas", "Fort Worth", "Plano", "Richardson", "Garland", "Mesquite"],
 
   formspreeId: "xyzabcde"
 };

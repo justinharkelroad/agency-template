@@ -10,7 +10,7 @@ export default function TeamCard({ name, title, bio, image }: TeamMember) {
     .join('');
 
   return (
-    <div className="bg-white rounded-xl overflow-hidden shadow-sm">
+    <div className="bg-white rounded-[var(--radius-card)] overflow-hidden shadow-sm">
       <div className="aspect-[3/4] overflow-hidden relative bg-[var(--color-surface)]">
         {imgError ? (
           <div className="w-full h-full flex items-center justify-center bg-[var(--color-primary-light)]">

@@ -1,14 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
 import config from '../../config';
-import ClickToCall from '../ui/ClickToCall';
 
 const navLinks = [
   { to: '/', label: 'Home' },
   { to: '/about', label: 'About' },
   { to: '/services', label: 'Services' },
-  { to: '/contact', label: 'Contact' },
+  { to: '/contact', label: 'Get a Quote' },
 ];
 
 export default function Navbar() {
@@ -23,13 +22,11 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
   }, [mobileOpen]);
 
-  const linkColor = scrolled ? 'text-white' : 'text-white';
   const activeLinkClass = 'underline decoration-[var(--color-accent)] decoration-2 underline-offset-4';
 
   return (
@@ -43,8 +40,10 @@ export default function Navbar() {
       </a>
 
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-[background-color] duration-300 ease-in-out ${
-          scrolled ? 'bg-[var(--color-primary)] shadow-md' : 'bg-transparent'
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${
+          scrolled
+            ? 'bg-[var(--color-primary)] shadow-md'
+            : 'bg-[var(--color-primary)]/80 backdrop-blur-md'
         }`}
       >
         <nav
@@ -74,7 +73,7 @@ export default function Navbar() {
                 to={link.to}
                 end={link.to === '/'}
                 className={({ isActive }) =>
-                  `font-[family-name:var(--font-body)] font-medium transition-colors duration-300 ${linkColor} hover:text-white/80 ${
+                  `font-[family-name:var(--font-body)] font-medium transition-colors duration-300 text-white hover:text-white/80 ${
                     isActive ? activeLinkClass : ''
                   }`
                 }
@@ -82,7 +81,15 @@ export default function Navbar() {
                 {link.label}
               </NavLink>
             ))}
-            <ClickToCall variant="button" />
+            {/* Click-to-call button in nav */}
+            <a
+              href={`tel:${config.phone}`}
+              className="inline-flex items-center gap-2 bg-[var(--color-accent)] text-white rounded-[var(--radius-btn)] px-4 py-2 font-[family-name:var(--font-body)] font-semibold transition-all duration-200 hover:bg-[var(--color-accent-hover)]"
+            >
+              <Phone size={18} />
+              <span className="hidden lg:inline">{config.phoneDisplay}</span>
+              <span className="lg:hidden">Call</span>
+            </a>
           </div>
 
           {/* Mobile hamburger */}
@@ -133,14 +140,17 @@ export default function Navbar() {
               </NavLink>
             ))}
           </nav>
-          <div className="pb-12 text-center space-y-3">
+          <div className="pb-12 text-center space-y-4">
+            {/* Prominent call button in mobile menu */}
             <a
               href={`tel:${config.phone}`}
-              className="block text-white text-lg font-semibold"
+              className="inline-flex items-center gap-2 bg-[var(--color-accent)] text-white rounded-[var(--radius-btn)] px-8 py-4 font-semibold text-lg"
             >
-              {config.phoneDisplay}
+              <Phone size={22} />
+              Call {config.phoneDisplay}
             </a>
             <p className="text-white/70 text-sm">{config.address.full}</p>
+            <p className="text-white/50 text-xs">{config.officeHours}</p>
           </div>
         </div>
       )}

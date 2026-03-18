@@ -19,7 +19,7 @@ const sizeClasses = {
 
 const variantClasses = {
   primary:
-    'bg-[var(--color-accent)] text-white hover:bg-[var(--color-accent-hover)]',
+    'bg-[var(--color-accent)] text-white hover:bg-[var(--color-accent-hover)] shadow-lg shadow-[var(--color-accent)]/15',
   secondary:
     'bg-[var(--color-primary)] text-white hover:opacity-90',
   outline:
@@ -36,7 +36,7 @@ export default function Button({
   type = 'button',
   disabled = false,
 }: ButtonProps) {
-  const classes = `inline-flex items-center justify-center rounded-lg font-semibold transition-all duration-200 hover:scale-[1.02] font-[family-name:var(--font-body)] ${variantClasses[variant]} ${sizeClasses[size]} ${disabled ? 'opacity-50 cursor-not-allowed' : ''} ${className}`;
+  const classes = `inline-flex items-center justify-center rounded-[var(--radius-btn)] font-semibold transition-all duration-200 hover:scale-[1.02] font-[family-name:var(--font-body)] ${variantClasses[variant]} ${sizeClasses[size]} ${disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'} ${className}`;
 
   if (href) {
     return (
