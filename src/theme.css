@@ -1,0 +1,21 @@
+:root {
+  --color-primary: #1A3A5C;
+  --color-secondary: #2E75B6;
+  --color-accent: #C9963B;
+  --color-bg: #FFFFFF;
+  --color-text: #1F2937;
+  --color-text-light: #6B7280;
+  --color-surface: #F9FAFB;
+  --color-border: #E5E7EB;
+
+  /* Derived */
+  --color-primary-light: #E8F0F8;
+  --color-accent-hover: #B8862F;
+
+  /* Typography */
+  --font-heading: 'DM Serif Display', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+
+  /* Spacing rhythm */
+  --section-padding: clamp(3rem, 8vw, 6rem);
+}
