@@ -37,6 +37,13 @@ export default function InlineQuoteForm({ variant = 'light' }: InlineQuoteFormPr
       });
       if (res.ok) {
         setSubmitted(true);
+        if (typeof (window as any).gtag === 'function') {
+          (window as any).gtag('event', 'conversion', {
+            event_category: 'lead',
+            event_label: 'quote_form_submit',
+            value: 1,
+          });
+        }
       } else {
         setError(true);
       }
