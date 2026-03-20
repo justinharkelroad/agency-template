@@ -73,4 +73,7 @@ export interface AgencyConfig {
 
   // === FORMS ===
   formspreeId: string;
+
+  // === ANALYTICS ===
+  gaMeasurementId?: string;
 }
