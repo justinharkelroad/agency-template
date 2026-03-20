@@ -10,6 +10,7 @@ import HeroSummit from './summit/HeroSummit';
 import HeroVanguard from './vanguard/HeroVanguard';
 import HeroForge from './forge/HeroForge';
 import HeroMeridian from './meridian/HeroMeridian';
+import HeroStarter from './starter/HeroStarter';
 
 export interface TemplateComponents {
   Hero: ComponentType;
@@ -42,6 +43,9 @@ const templates: Record<TemplateName, TemplateComponents> = {
   },
   meridian: {
     Hero: HeroMeridian,
+  },
+  starter: {
+    Hero: HeroStarter,
   },
 };
 
