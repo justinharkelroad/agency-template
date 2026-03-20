@@ -84,6 +84,7 @@ export default function Navbar() {
             {/* Click-to-call button in nav */}
             <a
               href={`tel:${config.phone}`}
+              onClick={() => { if (typeof (window as any).gtag === 'function') { (window as any).gtag('event', 'conversion', { event_category: 'engagement', event_label: 'call_click_nav', value: 1 }); } }}
               className="inline-flex items-center gap-2 bg-[var(--color-accent)] text-white rounded-[var(--radius-btn)] px-4 py-2 font-[family-name:var(--font-body)] font-semibold transition-all duration-200 hover:bg-[var(--color-accent-hover)]"
             >
               <Phone size={18} />
@@ -144,6 +145,7 @@ export default function Navbar() {
             {/* Prominent call button in mobile menu */}
             <a
               href={`tel:${config.phone}`}
+              onClick={() => { if (typeof (window as any).gtag === 'function') { (window as any).gtag('event', 'conversion', { event_category: 'engagement', event_label: 'call_click_mobile_menu', value: 1 }); } }}
               className="inline-flex items-center gap-2 bg-[var(--color-accent)] text-white rounded-[var(--radius-btn)] px-8 py-4 font-semibold text-lg"
             >
               <Phone size={22} />
