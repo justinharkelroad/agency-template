@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from 'react';
 import { Phone } from 'lucide-react';
 import config from '../../config';
+import { trackConversion } from '../seo/GoogleAnalytics';
 
 interface InlineQuoteFormProps {
   /** Visual variant for different template contexts */
@@ -37,13 +38,7 @@ export default function InlineQuoteForm({ variant = 'light' }: InlineQuoteFormPr
       });
       if (res.ok) {
         setSubmitted(true);
-        if (typeof (window as any).gtag === 'function') {
-          (window as any).gtag('event', 'conversion', {
-            event_category: 'lead',
-            event_label: 'quote_form_submit',
-            value: 1,
-          });
-        }
+        trackConversion('form');
       } else {
         setError(true);
       }
