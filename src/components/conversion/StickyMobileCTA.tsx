@@ -1,6 +1,7 @@
 import { Phone, FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import config from '../../config';
+import { trackConversion } from '../seo/GoogleAnalytics';
 
 /**
  * Fixed bottom bar on mobile — always visible.
@@ -13,7 +14,7 @@ export default function StickyMobileCTA() {
       <div className="grid grid-cols-2 divide-x divide-[var(--color-border)]">
         <a
           href={`tel:${config.phone}`}
-          onClick={() => { if (typeof (window as any).gtag === 'function') { (window as any).gtag('event', 'conversion', { event_category: 'engagement', event_label: 'call_click_sticky', value: 1 }); } }}
+          onClick={() => trackConversion('call')}
           className="flex items-center justify-center gap-2 py-4 text-white bg-[var(--color-primary)] font-[family-name:var(--font-body)] font-semibold text-[0.95rem]"
         >
           <Phone size={20} />
