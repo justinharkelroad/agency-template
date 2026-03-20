@@ -3,6 +3,7 @@ import { Outlet, useLocation } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import SchemaOrg from '../seo/SchemaOrg';
+import GoogleAnalytics from '../seo/GoogleAnalytics';
 import StickyMobileCTA from '../conversion/StickyMobileCTA';
 import config from '../../config';
 
@@ -34,6 +35,7 @@ export default function Layout() {
   return (
     <>
       <SchemaOrg />
+      <GoogleAnalytics />
       <Navbar />
       <main id="main-content" className="flex-1">
         <Outlet />
