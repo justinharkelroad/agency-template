@@ -76,4 +76,7 @@ export interface AgencyConfig {
 
   // === ANALYTICS ===
   gaMeasurementId?: string;
+  googleAdsId?: string;        // e.g. "AW-1234567890"
+  googleAdsCallLabel?: string;  // e.g. "AbCdEf" — conversion label for call clicks
+  googleAdsFormLabel?: string;  // e.g. "GhIjKl" — conversion label for form submits
 }
