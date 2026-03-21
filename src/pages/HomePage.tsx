@@ -11,6 +11,7 @@ import ClickToCall from '../components/ui/ClickToCall';
 
 export default function HomePage() {
   const { Hero } = getTemplate(config.template);
+  const isStarter = config.template === 'starter';
 
   return (
     <>
@@ -20,11 +21,11 @@ export default function HomePage() {
         path="/"
       />
       <Hero />
-      <AboutSection condensed />
-      <ServicesSection />
-      <TeamSection />
-      <TestimonialsSection />
-      <FAQSection />
+      {!isStarter && <AboutSection condensed />}
+      {!isStarter && <ServicesSection />}
+      {!isStarter && <TeamSection />}
+      {!isStarter && <TestimonialsSection />}
+      {!isStarter && <FAQSection />}
       <CTABanner />
       <ClickToCall variant="floating" />
     </>
