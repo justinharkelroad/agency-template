@@ -63,3 +63,48 @@
   --radius-card: 0.5rem;
   --hero-overlay: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.6) 100%);
 }
+
+/* ================================================
+   LIFENESS — Manrope + Inter
+   Clean purple, pill buttons, professional warmth
+   ================================================ */
+[data-template="lifeness"] {
+  --font-heading: 'Manrope', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --radius-sm: 0.75rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-btn: 9999px;
+  --radius-card: 1rem;
+  --hero-overlay: linear-gradient(135deg, rgba(91,79,232,0.85) 0%, rgba(66,49,207,0.7) 100%);
+}
+
+/* ================================================
+   SEGURO — Space Grotesk + Manrope
+   Dark editorial, bold uppercase, sharp edges
+   ================================================ */
+[data-template="seguro"] {
+  --font-heading: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Manrope', system-ui, sans-serif;
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-btn: 0;
+  --radius-card: 0;
+  --hero-overlay: linear-gradient(180deg, rgba(28,28,46,0.85) 0%, rgba(28,28,46,0.6) 100%);
+}
+
+/* ================================================
+   SAFEON — Newsreader + Plus Jakarta Sans
+   Friendly serif, navy & gold, rounded playful
+   ================================================ */
+[data-template="safeon"] {
+  --font-heading: 'Newsreader', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --radius-sm: 0.75rem;
+  --radius-md: 1.25rem;
+  --radius-lg: 2rem;
+  --radius-btn: 9999px;
+  --radius-card: 1.25rem;
+  --hero-overlay: linear-gradient(180deg, rgba(27,42,74,0.7) 0%, rgba(4,21,52,0.85) 100%);
+}

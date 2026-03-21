@@ -11,6 +11,9 @@ import HeroVanguard from './vanguard/HeroVanguard';
 import HeroForge from './forge/HeroForge';
 import HeroMeridian from './meridian/HeroMeridian';
 import HeroStarter from './starter/HeroStarter';
+import HeroLifeness from './lifeness/HeroLifeness';
+import HeroSeguro from './seguro/HeroSeguro';
+import HeroSafeon from './safeon/HeroSafeon';
 
 export interface TemplateComponents {
   Hero: ComponentType;
@@ -46,6 +49,15 @@ const templates: Record<TemplateName, TemplateComponents> = {
   },
   starter: {
     Hero: HeroStarter,
+  },
+  lifeness: {
+    Hero: HeroLifeness,
+  },
+  seguro: {
+    Hero: HeroSeguro,
+  },
+  safeon: {
+    Hero: HeroSafeon,
   },
 };
 

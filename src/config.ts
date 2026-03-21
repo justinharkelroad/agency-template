@@ -3,7 +3,7 @@ import type { AgencyConfig, TemplateName, TeamMember, Service, SocialLinks } fro
 export type { AgencyConfig, TemplateName, TeamMember, Service, SocialLinks };
 
 const config: AgencyConfig = {
-  template: 'heritage',
+  template: 'momentum',
 
   agencyName: "Maxwell Insurance Agency",
   tagline: "Protecting What Matters Most",
