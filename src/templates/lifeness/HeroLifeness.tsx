@@ -11,8 +11,8 @@ import config from '../../config';
 export default function HeroLifeness() {
   return (
     <section className="relative bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-0">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-6 items-center min-h-[85vh]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-6 items-center min-h-[85vh] py-28 lg:py-32">
           {/* Left — Purple container with content */}
           <div className="relative animate-[fadeSlideUp_800ms_ease-out_both]">
             <div
