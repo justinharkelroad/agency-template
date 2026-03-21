@@ -1,4 +1,4 @@
-export type TemplateName = 'heritage' | 'momentum' | 'prestige' | 'apex' | 'cornerstone' | 'summit' | 'vanguard' | 'forge' | 'meridian';
+export type TemplateName = 'heritage' | 'momentum' | 'prestige' | 'apex' | 'cornerstone' | 'summit' | 'vanguard' | 'forge' | 'meridian' | 'starter';
 
 export interface TeamMember {
   name: string;
